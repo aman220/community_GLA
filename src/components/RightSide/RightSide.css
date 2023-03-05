@@ -1,0 +1,27 @@
+.RightSide{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.navIcons{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.s-nav-icon{
+    cursor: pointer;
+}
+.s-nav-icon.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(106.23deg, #10970c, #a4f935 100%);
+    border-radius: 5px;
+    padding: 4px;
+    color: black;
+    font-weight: 700;
+  }
+.navIcons .s-nav-icon>img{
+    height: 1.5rem;
+    width: 1.5rem;
+}
