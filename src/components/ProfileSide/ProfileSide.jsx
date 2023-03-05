@@ -1,7 +1,7 @@
 import React from 'react'
 import LogoSearch from '../LogoSearch/LogoSearch'
 import ProfileCard from '../ProfileCard/ProfileCard'
-import FollowersCard from '../FallowersCard/FallowersCard'
+import FollowersCard from '../FollowersCard/FollowersCard'
 
 const ProfileSide = () => {
   return (
