@@ -13,7 +13,7 @@ const ProfileCard = () => {
       </div>
 
       <div className="ProfileName">
-        <span>Aman Raj Singh</span>
+        <span>garvit</span>
         <span>Software developer</span>
         <span style={{fontWeight: 'bold', fontSize: '15px'}}>Alumanai</span>
       </div>
