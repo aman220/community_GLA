@@ -6,6 +6,31 @@
     overflow: auto;
 }
 
+.trending-toggle>img {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.trending-mobile-view {
+    display: block;
+    position: absolute;
+    background: linear-gradient(45deg, #a8ff78, #78ffd6);
+    border-radius: 20px;
+    right: 0;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.close-btn {
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.TrendCardDiv {
+    margin-top: -4rem;
+    overflow: hidden;
+}
+
 /* responsive this card will be hidden when devicw width is small */
 @media screen and (max-width: 1000px) {
     .PostSide {
@@ -17,5 +42,17 @@
         margin-top: 5px;
         border-radius: 5px;
         width: 100%;
+    }
+
+    .trending-toggle {
+        display: block;
+        position: fixed;
+        margin-bottom: 1.5rem;
+        margin-right: 1rem;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(45deg, #a8ff78, #78ffd6);
+        border-radius: 25%;
+        padding: 4px;
     }
 }
