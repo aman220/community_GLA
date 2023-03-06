@@ -5,7 +5,9 @@
     height: 100vh;
     overflow: auto;
 }
-
+.trending-toggle{
+    display: none;
+}
 .trending-toggle>img {
     height: 2.5rem;
     width: 2.5rem;
