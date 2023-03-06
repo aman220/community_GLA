@@ -271,7 +271,7 @@ h3 span{
 }
 
 .dropdown-menu ul li {
-  padding: 10px 0;
+  padding: 8px 0px;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -287,7 +287,7 @@ h3 span{
 
 .dropdownItem{
   display: flex;
-  margin: 10px auto; 
+  margin: 5px auto; 
 }
 
 .dropdownItem img{
@@ -299,6 +299,6 @@ h3 span{
 
 .dropdownItem a{
   max-width: 100px;
-  margin-left: 10px;
+  margin-left: 0;
   transition: var(--speed);
 }
