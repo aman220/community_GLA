@@ -24,7 +24,7 @@ function NavBar() {
         </div>
       </div>
       <div className='Sitename'> Accha Sa Name</div>
-        <div classNaame="RightSide">
+        <div className="RightSide">
           <div className="navIcons">
             <div className="s-nav-icon active">
               <img src={Home} alt="" />

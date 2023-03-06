@@ -7,11 +7,11 @@ const TrendCard = () => {
   return (
     <div className="TrendCard">
         <h3>Top GLAdiators</h3>
-        {TrendData.map((trend)=>{
+        {TrendData.map((trend , glads)=>{
             return(
-                <div className="trend">
+                <div className="trend" key={glads}>
                     <span><a href="javascript:;">@{trend.name}</a></span>
-                    <span>{trend.glads} GLAds</span>
+                    <span><a href="javascript:;">{trend.glads} </a>GLAds</span>
                 </div>
             )
         })}
