@@ -14,13 +14,13 @@ const RightSide = () => {
             <img src={Home} alt="" />
             </div>
             <div className="s-nav-icon">
-            <UilSetting/>
+            <img src={Comment} alt="" />
             </div>
             <div className="s-nav-icon">
             <img src={Noti} alt="" />
             </div>
             <div className="s-nav-icon">
-            <img src={Comment} alt="" />
+            <UilSetting/>
             </div>
         </div>
 
