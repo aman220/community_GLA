@@ -86,7 +86,18 @@
   }
   
   .s-nav-icon {
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 4px;
+  }
+  .s-nav-icon.active{
+    background: linear-gradient(106.23deg, #10970c, #a4f935 100%);
+  }
+  .s-nav-icon>img{
+    height: 1.8rem;
+    width: 1.8rem;
   }
   
   .logo-search-container {
