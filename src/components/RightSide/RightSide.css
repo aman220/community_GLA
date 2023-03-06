@@ -8,3 +8,9 @@
     display: flex;
     justify-content: space-between;
 }
+/* this will be hidden in small screen size */
+@media screen and (max-width: 1000px) {
+    .RightSide{
+      display: none;
+    }
+  }

@@ -4,3 +4,32 @@
     grid-template-columns: 18rem auto 20rem;
     gap: 1rem;
 }
+.trending-toggle>img{
+    height: 2.5rem;
+    width: 2.5rem;
+}
+.trending-toggle{
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .Home {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        height: 100vh;
+        overflow: auto;
+        width: 100%;
+    }
+    .trending-toggle{
+        display: block;
+        position: fixed;
+        margin-bottom: 1.5rem;
+        margin-right: 1rem;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(106.23deg, #10970c, #a4f935 100%);
+        border-radius: 25%;
+        padding: 4px;
+    }
+}

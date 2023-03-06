@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './ProfileSide.css'
 import ProfileCard from '../ProfileCard/ProfileCard'
 import FollowersCard from '../FollowersCard/FollowersCard'
 
