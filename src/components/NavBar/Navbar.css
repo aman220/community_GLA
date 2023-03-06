@@ -221,8 +221,8 @@
   position: absolute;
   top: 50px;
   right: 20px;
-  background-color: #fff;
-  border-radius: var(--border-radius);
+  background: linear-gradient(45deg, #a8ff78, #78ffd6);
+  border-radius: 20px;
   padding: 10px 20px;
   width: 200px;
 }
@@ -237,7 +237,9 @@
   background: var(--secondary-bg);
   transform: rotate(45deg);
 }
-
+.dropdown-content{
+  margin-top: -20px;
+}
 .dropdown-menu.active{
   opacity: 1;
   visibility: visible;
@@ -258,7 +260,6 @@ h3{
   text-align: center;
   font-size: 18px;
   padding: 20px 0;
-  font-weight: 500;
   font-size: 18px;
   color: var(--primary-text-color);
   line-height: 1.2rem;

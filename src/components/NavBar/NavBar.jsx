@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './Navbar.css';
 import Home from '../../img/home.png'
 import Noti from '../../img/noti.png'
@@ -66,18 +66,20 @@ function NavBar() {
           <div className="s-nav-icon">
             <img src={Noti} alt="" />
           </div>
-          <div className="s-nav-icon" onClick={()=>{setOpen(!open)}}>
-            <img src={Profile} alt="" className='profile-icon'/>
+          <div className="s-nav-icon" onClick={() => { setOpen(!open) }}>
+            <img src={Profile} alt="" className='profile-icon' />
           </div>
-          <div className={`dropdown-menu ${open? 'active' : 'inactive'}`}>
-            <h3>The Garvit<br/><span>Software Developer</span></h3>
-            <ul>
-              <DropdownItem img = {User} text = {"My profile"}/>
-              <DropdownItem img = {Edit} text = {"Edit profile"}/>
-              <DropdownItem img = {Question} text = {"Help"}/>
-              <DropdownItem img = {Setting} text = {"Settings"}/>
-              <DropdownItem img = {Logout} text = {"Logout"}/>
-            </ul>
+          <div className={`dropdown-menu ${open ? 'active' : 'inactive'}`}>
+            <div className="dropdown-content">
+              <h3>The Garvit<br /><span>Software Developer</span></h3>
+              <ul>
+                <DropdownItem img={User} text={"My profile"} />
+                <DropdownItem img={Edit} text={"Edit profile"} />
+                <DropdownItem img={Question} text={"Help"} />
+                <DropdownItem img={Setting} text={"Settings"} />
+                <DropdownItem img={Logout} text={"Logout"} />
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -86,7 +88,7 @@ function NavBar() {
 }
 
 function DropdownItem(props) {
-  return(
+  return (
     <li className='dropdownItem'>
       <img src={props.img}></img>
       <a> {props.text} </a>
