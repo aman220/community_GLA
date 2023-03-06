@@ -9,7 +9,7 @@ import TrendCard from '../TrendCard/TrendCard'
 const RightSide = () => {
   return (
     <div className="RightSide">
-        <div className="navIcons">
+        {/* <div className="navIcons">
             <div className="s-nav-icon active">
             <img src={Home} alt="" />
             </div>
@@ -22,7 +22,7 @@ const RightSide = () => {
             <div className="s-nav-icon">
             <UilSetting/>
             </div>
-        </div>
+        </div> */}
 
         <TrendCard/>
     </div>
