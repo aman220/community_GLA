@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState, useEffect} from 'react';
 import './Navbar.css';
 import Home from '../../img/home.png'
 import Noti from '../../img/noti.png'
@@ -15,6 +15,13 @@ import User from '../../img/user.png'
 
 function NavBar() {
   const [open, setOpen] = useState(false);
+  useEffect(() => {
+    let handler = ()=>{
+      setOpen(false);
+    };
+
+    document.addEventListener("mousedown", handler)
+  })
   return (
     <nav className="navbar">
       {/* navbar for desktop view */}
