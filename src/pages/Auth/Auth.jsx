@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Auth.css";
 import Logo from "../../img/logo.png";
 
 const Auth = () => {
+  const [userType, setUserType] = useState("");
+
+  const handleChange = (event) => {
+    setUserType(event.target.value);
+  };
+
   return (
     <div className="Auth">
       <div className="a-left">
@@ -13,47 +19,60 @@ const Auth = () => {
         </div>
       </div>
 
-      <LogIn/>
+      <LogIn handleChange={handleChange} userType={userType} />
     </div>
   );
 };
 
-function LogIn() {
-    return (
-      <div className="a-right">
-        <form className="infoForm authForm">
-          <h3>Log In</h3>
-  
-          <div className="input-group">
-            <input
-              type="text"
-              placeholder="Username"
-              className="infoInput"
-              name="username"
-            />
-          </div>
-  
-          <div className="input-group">
-            <input
-              type="password"
-              className="infoInput"
-              placeholder="Password"
-              name="password"
-            />
-          </div>
-  
-          <div className="button-group">
-              <span className="signup-link">
-                Don't have an account? Sign up
-              </span>
-            <button className="button infoButton">Login</button>
-          </div>
-        </form>
-      </div>
-    );
-  }
+function LogIn(props) {
+  return (
+    <div className="a-right">
+      <form className="infoForm authForm">
+        <h3>Log In</h3>
 
-function SignUp() {
+        <div className="input-group">
+          <input
+            type="text"
+            placeholder="Username"
+            className="infoInput"
+            name="username"
+          />
+        </div>
+
+        <div className="input-group">
+          <input
+            type="password"
+            className="infoInput"
+            placeholder="Password"
+            name="password"
+          />
+        </div>
+
+        <div className="input-group">
+          <select
+            className="infoInput"
+            name="userType"
+            value={props.userType}
+            onChange={props.handleChange}
+          >
+            <option value="">Select User Type</option>
+            <option value="faculty">Faculty</option>
+            <option value="student">Student</option>
+            <option value="alumni">Alumni</option>
+            <option value="department_head">Department Head</option>
+          </select>
+        </div>
+
+        <div className="button-group">
+          <span className="signup-link">Don't have an account? Sign up</span>
+          <button className="button infoButton">Login</button>
+        </div>
+      </form>
+    </div>
+  );
+}
+
+function SignUp(props) {
   return (
     <div className="a-right">
       <form className="infoForm authForm">
@@ -98,10 +117,27 @@ function SignUp() {
           />
         </div>
 
-        <div className="button-group">
-            <span className="login-link">Already have an account? Login!</span>
+        <div className="input-group">
+          <select
+            className="infoInput"
+            name="userType"
+            value={props.userType}
+            onChange={props.handleChange}
+          >
+            <option value="">Select User Type</option>
+            <option value="faculty">Faculty</option>
+            <option value="student">Student</option>
+            <option value="alumni">Alumni</option>
+            <option value="department_head">Department Head</option>
+          </select>
         </div>
-        <button className="button infoButton" type="submit">Signup</button>
+
+        <div className="button-group">
+          <span className="login-link">Already have an account? Login!</span>
+        </div>
+        <button className="button infoButton" type="submit">
+          Signup
+        </button>
       </form>
     </div>
   );
