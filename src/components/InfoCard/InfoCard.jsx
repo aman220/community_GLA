@@ -20,23 +20,35 @@ const InfoCard = () => {
 
             <div className="info">
                 <span>
-                    <b>Status </b>
+                    <b>Status: </b>
                 </span>
                 <span>Student</span>
             </div>
 
             <div className="info">
                 <span>
-                    <b>Qualification </b>
+                    <b>Qualification: </b>
                 </span>
                 <span>B.Tech CS 2nd Year</span>
             </div>
 
             <div className="info">
                 <span>
-                    <b>Skills </b>
+                    <b>Skills: </b>
                 </span>
                 <span>Software Developer</span>
+            </div>
+            <div className="info">
+                <span>
+                    <b>Wroks At: </b>
+                </span>
+                <span>wipro Inida pvt ltd</span>
+            </div>
+            <div className="info">
+                <span>
+                    <b>Lives In: </b>
+                </span>
+                <span>Aligarh</span>
             </div>
         </div>
     )

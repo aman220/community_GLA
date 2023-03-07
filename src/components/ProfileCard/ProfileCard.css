@@ -9,6 +9,17 @@
     background: var(--cardColor);
 }
 
+.description {
+  margin: 0.55rem 1rem;
+  padding: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #666;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
 .ProfileImages{
     position: relative;
     display: flex;
