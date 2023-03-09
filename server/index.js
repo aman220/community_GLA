@@ -11,11 +11,18 @@ import UploadRoute from './Routes/UploadRouter.js'
 
 const app = express();
 
+
+
+
 // Middleware
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 dotenv.config();
+
+// to serve images inside public folder
+app.use(express.static('public')); 
+app.use('/images', express.static('images'));
 
 mongoose
   .connect(process.env.MONGO_DB, {

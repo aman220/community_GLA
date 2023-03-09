@@ -11,6 +11,7 @@ import { uploadImage , uploadPost} from '../../actions/uploadAction';
 
 const PostShare = () => {
     const [image, setImage] = useState(null)
+    const [showPopUp, setShowPopUp] = useState(false);
     const loading = useSelector((state) => state.postReducer.uploading);
     const { user } = useSelector((state) => state.authReducer.authData);
     const imageRef = useRef()
@@ -50,6 +51,10 @@ const PostShare = () => {
       }
       dispatch(uploadPost(newPost));
       resetShare();
+      setShowPopUp(true); // Set pop-up visibility to true after successful upload
+    setTimeout(() => {
+      setShowPopUp(false); // Hide the pop-up after 3 seconds
+    }, 3000);
     }
 
     // Reset Post Share
