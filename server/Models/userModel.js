@@ -32,7 +32,7 @@ const UserSchema = mongoose.Schema(
         about: String,
         livesin: String,
         worksAt: String,
-        relationship: String,
+        qualification: String,
         followers: [] ,
         following: []
     },

@@ -1,6 +1,7 @@
 import React from "react";
 import Cover from "../../img/cover.jpg";
 import Profile from "../../img/profileImg.jpg";
+import FollowersCard from "../FollowersCard/FollowersCard"
 import "./ProfileCard.css";
 
 const ProfileCard = () => {
@@ -22,20 +23,26 @@ const ProfileCard = () => {
         <hr />
         <div>
           <div className="follow">
-            <span>6,890</span>
-            <span>Followings</span>
+            <a href="javascript:;">
+              <span>6,890</span>
+              <span>Followings</span>
+            </a>
           </div>
           <div className="vl"></div>
           <div className="follow">
-            <span>1</span>
-            <span>Followers</span>
+            <a href="#">
+              <span>1</span>
+              <span>Followers</span>
+            </a>
           </div>
           {ProfilePage && (
             <>
               <div className="vl"></div>
               <div className="follow">
-                <span>3</span>
-                <span>Posts</span>
+                <a href="#">
+                  <span>3</span>
+                  <span>Posts</span>
+                </a>
               </div>
             </>
           )}

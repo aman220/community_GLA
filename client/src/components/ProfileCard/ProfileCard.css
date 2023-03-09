@@ -76,18 +76,18 @@
     align-items: center;
   }
   
-  .follow {
+  .follow a{
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
     align-items: center;
     justify-content: center;
   }
-  .follow > span:nth-of-type(1) {
+  .follow a> span:nth-of-type(1) {
     font-weight: bold;
   }
   
-  .follow > span:nth-of-type(2) {
+  .follow a> span:nth-of-type(2) {
     color: var(--gray);
     font-size: 13px;
   }
