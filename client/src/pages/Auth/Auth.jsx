@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import "./Auth.css";
 import Logo from "../../img/logo.png";
+import { useDispatch, useSelector } from 'react-redux';
+import { logIn, signUp } from "../../actions/AuthAction";
 
 const Auth = () => {
+  const loading = useSelector((state)=>state.authReducer.loading)
   const [isSignUp, setIsSignUp] = useState(true);
 
   const [data, setData] = useState({ firstname: "", lastname: "", username: "", password: "", confirmpass: "", userType: "" })
 
   const [confirmPass, setconfirmPass] = useState(true);
+
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value })
@@ -17,11 +22,12 @@ const Auth = () => {
     e.preventDefault();
 
     if (isSignUp) {
-      if (data.password !== data.confirmpass) {
-        setconfirmPass(false)
-      }
+      data.password === data.confirmpass ? dispatch(signUp(data)) : setconfirmPass(false);
     }
-  }
+    else {
+      dispatch(logIn(data))
+    }
+  };
 
   const resetForm = () => {
     setconfirmPass(true);
@@ -116,10 +122,10 @@ const Auth = () => {
           }
           <span style={{ display: confirmPass ? "none" : "block", color: "red", fontSize: '12px', alignSelf: 'flex-end' }}>* Confirm Password is not same</span>
           <div className="button-group">
-            <span className="login-link" onClick={() => {setIsSignUp((prev) => !prev); resetForm()}} style={{ cursor: "pointer" }}>{isSignUp ? "Already have an account? Login" : "Dont have an account? SignUp"}</span>
+            <span className="login-link" onClick={() => { setIsSignUp((prev) => !prev); resetForm() }} style={{ cursor: "pointer" }}>{isSignUp ? "Already have an account? Login" : "Dont have an account? SignUp"}</span>
           </div>
-          <button className="button infoButton" type="submit">
-            {isSignUp ? "Signup" : "Login"}
+          <button className="button infoButton" type="submit" disabled={loading}>
+            {loading? "Loading..." : isSignUp ? "Signup" : "Login"}
           </button>
         </form>
       </div>

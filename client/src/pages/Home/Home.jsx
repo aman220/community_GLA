@@ -7,11 +7,10 @@ import PostSide from '../../components/PostSide/PostSide'
 const Home = () => {
   return (
     <div className="Home">
-      
-      <ProfileSide/>
-      <PostSide/>
-      <RightSide/>     
-    </div>
+        <ProfileSide />
+        <PostSide />
+        <RightSide />
+      </div>
   )
 }
 

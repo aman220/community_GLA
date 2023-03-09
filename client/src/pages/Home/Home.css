@@ -1,6 +1,7 @@
 body{
     scroll-behavior: smooth;
 }
+
 .Home{
     position: relative;
     display: grid;
