@@ -3,6 +3,7 @@ import './Home.css'
 import ProfileSide from '../../components/ProfileSide/ProfileSide'
 import RightSide from '../../components/RightSide/RightSide'
 import PostSide from '../../components/PostSide/PostSide'
+import Profile from '../Profile/Profile'
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
         <ProfileSide />
         <PostSide />
         <RightSide />
+        {/* <Profile/> */}
       </div>
   )
 }

@@ -72,12 +72,6 @@
   margin-right: auto;
 }
 
-.RightSide {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-}
-
 .navIcons {
   margin-left: 2rem;
   display: flex;
