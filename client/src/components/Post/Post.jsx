@@ -25,10 +25,8 @@ const Post = ({ data }) => {
   return (
     <div className="Post">
       <div class="usersprofile">
-        <img src={data.profimg} alt="" class="followerImg" />
         <div class="usersname">
-          <span><b>{data.name}</b></span>
-          <span>@{data.username}</span>
+          <span><b>@gaurav</b></span>
         </div>
         <button className="button fc-button">Follow</button>
       </div>

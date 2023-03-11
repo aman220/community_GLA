@@ -42,26 +42,21 @@ const PostShare = () => {
         data.append("file", image);
         newPost.image = fileName;
         console.log(newPost);
-        try {
-          dispatch(uploadImage(data));
-        } catch (err) {
-          console.log(err);
-        }
-        
+        try{
+          dispatch(uploadImage(data))
+        }catch (error){
+          console.log(error);
+        } 
       }
-      dispatch(uploadPost(newPost));
-      resetShare();
-      setShowPopUp(true); // Set pop-up visibility to true after successful upload
-    setTimeout(() => {
-      setShowPopUp(false); // Hide the pop-up after 3 seconds
-    }, 3000);
+    dispatch(uploadPost(newPost))
+    reset()
     }
 
     // Reset Post Share
-  const resetShare = () => {
+  const reset = () => {
     setImage(null);
-    desc.current.value = "";
-  };
+    desc.current.value=""
+  }
 
 
     return (
@@ -91,7 +86,7 @@ const PostShare = () => {
                         <UilSchedule />
                         Meeting
                     </div>
-                    <button className='button ps-button' onClick={handleSubmit}disabled={loading} >  {loading ? "uploading" : "Share"}</button>
+                    <button className='button ps-button' onClick={handleSubmit} disabled={loading} >  {loading ? "uploading" : "Share"}</button>
                     <div style={{display:"none"}}>
                         <input type="file" name="myImage" ref={imageRef} onChange={onImageChange}/>
                     </div>
