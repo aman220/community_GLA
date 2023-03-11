@@ -20,6 +20,8 @@ const Post = ({ data }) => {
     liked? setLikes((prev)=>prev-1): setLikes((prev)=>prev+1)
   };
 
+  const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
+
 
 
   return (
@@ -27,12 +29,12 @@ const Post = ({ data }) => {
      <div class="usersprofile">
               
           <>
-            <img src={data.userProfile} alt="" class="followerImg" />
+            <img src={user.ProfilePicture? serverPublic + user.ProfilePicture : serverPublic + "defaultProfile.png"} alt="" class="followerImg" />
             <div class="usersname">
               <span>
-                <b>{data.userProfile}</b>
+                <b>{user.firstname} {user.lastname}</b>
               </span>
-              <span>@{data.name}</span>
+              <span>@{user.username}</span>
             </div>
             <button className="button fc-button">Follow</button>
           </>
