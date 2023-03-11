@@ -3,8 +3,10 @@ import Auth from "./pages/Auth/Auth";
 import Home from "./pages/Home/Home";
 import Thanks from "./pages/Thanks/Thanks"
 
+
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { useSelector } from "react-redux";
+import Projects from "./pages/Projects/Projects";
 function App() {
   const user = useSelector((state) => state.authReducer.authData)
   const signUpSuccess =  useSelector((state)=>state.authReducer.signUpSuccess)

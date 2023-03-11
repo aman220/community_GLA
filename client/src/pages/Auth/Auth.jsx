@@ -124,8 +124,9 @@ const Auth = () => {
           <div className="button-group">
             <span className="login-link" onClick={() => { setIsSignUp((prev) => !prev); resetForm() }} style={{ cursor: "pointer" }}>{isSignUp ? "Already have an account? Login" : "Dont have an account? SignUp"}</span>
           </div>
-          <button className="button infoButton" type="submit" disabled={loading}>
-            {loading? "Loading..." : isSignUp ? "Signup" : "Login"}
+          <button className="button infoButton" type="submit" disabled={loading} >
+            {loading? "Loading..." : isSignUp ? "Signup" : "Login"} 
+            
           </button>
         </form>
       </div>

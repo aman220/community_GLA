@@ -5,7 +5,7 @@ import NotLike from "../../img/notlike.png";
 import Comment from "../../img/comments.png";
 import Share from "../../img/share.png";
 import { useSelector } from "react-redux";
-import { likePost } from "../../api/PostsRequests";
+import { likePost } from "../../api/PostRequest";
 
 const Post = ({ data }) => {
   const { user } = useSelector((state) => state.authReducer.authData);
@@ -24,11 +24,18 @@ const Post = ({ data }) => {
 
   return (
     <div className="Post">
-      <div class="usersprofile">
-        <div class="usersname">
-          <span><b>@gaurav</b></span>
-        </div>
-        <button className="button fc-button">Follow</button>
+     <div class="usersprofile">
+              
+          <>
+            <img src={data.userProfile} alt="" class="followerImg" />
+            <div class="usersname">
+              <span>
+                <b>{data.userProfile}</b>
+              </span>
+              <span>@{data.name}</span>
+            </div>
+            <button className="button fc-button">Follow</button>
+          </>
       </div>
 
       <div className="discription">

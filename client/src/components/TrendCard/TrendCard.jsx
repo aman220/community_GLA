@@ -22,7 +22,7 @@ const TrendCard = () => {
             {TrendTopic.map((topic) => {
                 return (
                     <div className="trend">
-                        <span><a href="javascript:;">{topic.topic}</a></span>
+                        <span><a href="javascript:;">{topic.topic} </a></span>
                         <span>by <a href="javascript:;">{topic.discription}</a></span>
                     </div>
                 )
