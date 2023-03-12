@@ -1,0 +1,38 @@
+.follower {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    gap: 2rem;
+  }
+  
+  .follower > div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .followerImg {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+  }
+  
+  .name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100px;
+  }
+  
+  .name > span:nth-of-type(1) {
+    font-weight: bold;
+  }
+  
+  .fc-button {
+    transition: 0.3s ease;
+    height: 2rem;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
