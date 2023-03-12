@@ -8,6 +8,7 @@ import Profile from "./pages/Profile/Profile";
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { useSelector } from "react-redux";
 import Projects from "./pages/Projects/Projects";
+import Chat from "./pages/Chat/Chat";
 function App() {
   const user = useSelector((state) => state.authReducer.authData)
   const signUpSuccess =  useSelector((state)=>state.authReducer.signUpSuccess)
@@ -21,6 +22,7 @@ function App() {
         <Route path="/auth" element={user? <Navigate to='../home'/>:<Auth/>}/>
         <Route path="/thanks" element={signUpSuccess? <Thanks/>:<Auth/>}/>
         <Route path="/profile/:id" element={user ? <Profile /> : <Navigate to="../auth" />} />
+        <Route path="/chat" element={user ? <Chat/> : <Navigate to="../auth"/>}/>
       </Routes>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import Home from '../../img/home.png'
 import Noti from '../../img/noti.png'
@@ -12,11 +12,12 @@ import Logout from '../../img/log-out.png'
 import Question from '../../img/question.png'
 import Setting from '../../img/settings.png'
 import User from '../../img/user.png'
+import { Link } from 'react-router-dom'
 
 function NavBar() {
   const [open, setOpen] = useState(false);
   useEffect(() => {
-    let handler = ()=>{
+    let handler = () => {
       setOpen(false);
     };
 
@@ -42,7 +43,9 @@ function NavBar() {
           <div className="RightSide">
             <div className="navIcons">
               <div className="s-nav-icon active">
-                <img src={Home} alt="" />
+                {/* <Link to='/home'> */}
+                  <img src={Home} alt="" />
+                {/* </Link> */}
               </div>
               <div className="s-nav-icon">
                 <UilSetting />
@@ -51,7 +54,9 @@ function NavBar() {
                 <img src={Noti} alt="" />
               </div>
               <div className="s-nav-icon">
-                <img src={Comment} alt="" />
+                {/* <Link to='/chat'> */}
+                  <img src={Comment} alt="" />
+                {/* </Link> */}
               </div>
             </div>
           </div>

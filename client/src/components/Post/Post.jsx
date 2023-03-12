@@ -34,7 +34,7 @@ const Post = ({ data }) => {
               <span>
                 <b>{user.firstname} {user.lastname}</b>
               </span>
-              <span>@{user.username}</span>
+              <span>{user.username}</span>
             </div>
             <button className="button fc-button">Follow</button>
           </>
