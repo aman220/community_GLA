@@ -103,7 +103,7 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
           name="worksAt"
           placeholder="Works at"
           onChange={handleChange}
-          value = {formData.worksAt}
+          value = {formData.worksAt} 
         />
 
         <input

@@ -12,7 +12,7 @@ import Logout from '../../img/log-out.png'
 import Question from '../../img/question.png'
 import Setting from '../../img/settings.png'
 import User from '../../img/user.png'
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom"
 
 function NavBar() {
   const [open, setOpen] = useState(false);
@@ -21,8 +21,12 @@ function NavBar() {
       setOpen(false);
     };
 
-    document.addEventListener("mousedown", handler)
-  })
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  }, []);
   return (
     <nav className="navbar">
       {/* navbar for desktop view */}
@@ -43,7 +47,7 @@ function NavBar() {
           <div className="RightSide">
             <div className="navIcons">
               <div className="s-nav-icon active">
-                {/* <Link to='/home'> */}
+                {/* <Link to='/home'> */} 
                   <img src={Home} alt="" />
                 {/* </Link> */}
               </div>

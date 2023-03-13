@@ -14,7 +14,7 @@ const ProfileCard = ({location}) => {
     <div className="ProfileCard">
       <div className="ProfileImages">
         <img src={user.coverPicture? serverPublic + user.coverPicture : serverPublic + "defaultCover.jpg"} alt="" />
-        <img src={user.ProfilePicture? serverPublic + user.ProfilePicture : serverPublic + "defaultProfile.png"} alt="" />
+        <img src={user.profilePicture? serverPublic + user.profilePicture : serverPublic + "defaultProfile.png"} alt="" />
       </div>
 
       <div className="ProfileName">
@@ -58,6 +58,7 @@ const ProfileCard = ({location}) => {
         <div className="description-container">
           <div className="description">
             <span>
+
               {user.description}
             </span>
           </div>
