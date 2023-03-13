@@ -4,7 +4,9 @@ import { UilPen } from '@iconscout/react-unicons'
 import ProfileModal from '../ProfileModal/ProfileModal'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import * as UserApi from '../../api/UserRequests.js'
+import * as UserApi from "../../api/UserRequests.js";
+import { logout } from "../../actions/AuthAction";
+
 const InfoCard = () => {
     const [modalOpened , setModalOpened] = useState(false)
 
@@ -15,6 +17,10 @@ const InfoCard = () => {
     const [profileUser , setProfileUser] = useState({})
 
     const {user} = useSelector((state)=>state.authReducer.authData)
+
+    const handleLogOut = ()=> {
+        dispatch(logout())
+      }
 
     useEffect(()=> {
         const fetchProfileUser = async()=> {
@@ -74,6 +80,8 @@ const InfoCard = () => {
                 </span>
                 <span>{profileUser.livesin}</span>
             </div>
+
+            <button className="button logout-button" onClick={handleLogOut}>Log Out</button>
         </div>
     )
 }
