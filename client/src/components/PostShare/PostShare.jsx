@@ -76,7 +76,7 @@ const PostShare = () => {
                     </div>
                     <div className="option" style={{color:"var(--video)"}}>
                         <UilPlayCircle />
-                        Video
+                        Announce
                     </div>
                     <div className="option" style={{color:"var(--location)"}}>
                         <UilClipboard />

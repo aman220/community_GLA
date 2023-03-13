@@ -8,8 +8,3 @@
 
 
 /* responsive this card will be hidden when devicw width is small */
-@media screen and (max-width: 1000px) {
-    .ProfileSide{
-      display: none;
-    }
-  }

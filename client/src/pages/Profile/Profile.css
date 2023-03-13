@@ -27,19 +27,7 @@
 }
 
 @media screen and (max-width: 1000px) {
-    .Profile {
-        position: relative;
-        display: flex;
-        gap: 1rem;
-        flex-direction: column;
-    }
-    .ProfileLeft{
-        display: block;
-    }
-    .trending-toggle{
-        display: none;
-    }
     .ProfileSide{
-        display: block;
+      display: none;
     }
-}
+  }
