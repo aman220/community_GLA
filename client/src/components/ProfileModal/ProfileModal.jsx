@@ -1,25 +1,25 @@
 import { Modal, useMantineTheme } from "@mantine/core";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import "./ProfileModal.css"
-import { uploadImage } from "../../actions/uploadAction.js";
-import { updateUser } from "../../actions/UserAction.js";
+import { uploadImage } from "../../actions/uploadAction";
+import { updateUser } from "../../actions/UserAction";
 
-function ProfileModal({ modalOpened, setModalOpened, data }) {
+const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
   const theme = useMantineTheme();
   const {password, ...other} = data;
   const [formData, setFormData] = useState(other);
-  const [profileImage, setProfileImage] = useState(null)
-  const [coverImage, setCoverImage] = useState(null)
-  const dispatch = useDispatch()
-  const param = useParams()
-  const {user} = useSelector((state)=>state.authReducer.authData)
+  const [profileImage, setProfileImage] = useState(null);
+  const [coverImage, setCoverImage] = useState(null);
+  const dispatch = useDispatch();
+  const param = useParams();
+  const {user} = useSelector((state)=>state.authReducer.authData);
 
   const handleChange = (e)=> {
-    setFormData({...formData, [e.target.name]: e.target.value})
-  }
+    setFormData({...formData, [e.target.name]: e.target.value});
+  };
 
   const onImageChange = (event) =>{
     if (event.target.files && event.target.files[0]) {
@@ -59,7 +59,7 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
     }
     dispatch(updateUser(param.id, UserData));
     setModalOpened(false);
-  }
+  };
 
   return (
     <Modal
@@ -75,7 +75,7 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
       opened={modalOpened}
       onClose={() => setModalOpened(false)}
     >
-      <form className="infoForm">
+      <form className="infoForm" onSubmit={handleSubmit}>
         <h3>Your info</h3>
 
         <input
@@ -158,6 +158,6 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
       </form>
     </Modal>
   );
-}
+};
 
 export default ProfileModal;
