@@ -22,7 +22,7 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
   }
 
   const onImageChange = (event) =>{
-    if (event.target.files && event.target.files[0]) {
+    if (event.target.files && event.target.files[1]) {
       let img = event.target.files[0];
       event.target.name === "profileImage"
       ? setProfileImage(img)
@@ -106,6 +106,15 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
           value = {formData.worksAt}
         />
 
+        <input
+          type="text"
+          className="infoInput"
+          name="qualification"
+          placeholder="Qualification"
+          onChange={handleChange}
+          value = {formData.qualification}
+        />
+
 
 
         <input
@@ -131,8 +140,8 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
         <input
           type="text"
           className="infoInput"
+          name="description"
           placeholder="User Description"
-          name='description'
           onChange={handleChange}
           value = {formData.description}
         />

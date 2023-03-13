@@ -58,10 +58,7 @@ const ProfileCard = ({location}) => {
         <div className="description-container">
           <div className="description">
             <span>
-              Hello my name is aman raj singh i am software develper in gla
-              university mathura currently i am pursuing b tech from gla
-              univeriy mathyra i am very smart body i am from aligarh i like to
-              watch moviee or content taman ka
+              {user.description}
             </span>
           </div>
         </div>
