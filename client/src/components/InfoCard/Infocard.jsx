@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom'
 import * as UserApi from "../../api/UserRequests.js";
 import { logout } from "../../actions/AuthAction";
 
-const InfoCard = () => {
+const Infocard = () => {
     const [modalOpened , setModalOpened] = useState(false)
 
     const dispatch = useDispatch()
@@ -86,4 +86,4 @@ const InfoCard = () => {
     )
 }
 
-export default InfoCard
+export default Infocard

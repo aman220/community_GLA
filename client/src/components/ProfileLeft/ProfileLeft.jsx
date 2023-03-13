@@ -1,6 +1,6 @@
 import React from 'react'
 import FollowersCard from '../FollowersCard/FollowersCard'
-import InfoCard from '../InfoCard/InfoCard'
+import InfoCard from '../InfoCard/Infocard.jsx'
 
 const ProfileLeft = () => {
   return (
