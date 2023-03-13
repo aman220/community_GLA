@@ -33,6 +33,8 @@ const UserSchema = mongoose.Schema(
         livesin: String,
         worksAt: String,
         qualification: String,
+        country: String,
+        description: String,
         followers: [] ,
         following: []
     },

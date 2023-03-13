@@ -37,6 +37,7 @@ const InfoCard = () => {
                     <ProfileModal 
                     modalOpened={modalOpened} 
                     setModalOpened={setModalOpened} 
+                    data = {user}
                     />
                 </div>
             </div>
@@ -63,7 +64,7 @@ const InfoCard = () => {
             </div>
             <div className="info">
                 <span>
-                    <b>Wroks At: </b>
+                    <b>Works At: </b>
                 </span>
                 <span>{profileUser.worksAt}</span>
             </div>
