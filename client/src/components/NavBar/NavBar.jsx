@@ -25,7 +25,8 @@ function NavBar() {
 
   const [showNavBar, setShowNavBar] = useState(false);
 
-  const { user } = useSelector((state) => state.authReducer.authData);
+  const auth = useSelector((state) => state.authReducer.authData);
+  const user = auth && auth.user;
 
   const [open, setOpen] = useState(false);
 
@@ -65,7 +66,7 @@ function NavBar() {
                 </Link>
               </div>
               <div className='s-nav-icon'>
-                <Link to={`/profile/${user._id}`}>
+                <Link to={`/profile/${user?._id}`}>
                   <UilSetting className="navbar-icons" />
                 </Link>
               </div>
@@ -120,7 +121,7 @@ function NavBar() {
             </Link>
           </div>
           <div className="s-nav-icon" onClick={() => { setOpen(!open) }}>
-            <Link to={`/profile/${user._id}`} className="s-nav-icon">
+            <Link to={`/profile/${user?._id}`} className="s-nav-icon">
               <img src={Profile} alt="" className='profile-icon' />
             </Link>
           </div>

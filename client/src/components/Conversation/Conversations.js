@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getUser } from "../../api/UserRequests";
-const Conversations = ({ data, currentUser }) => {
+const Conversations = ({ data, currentUser ,  online }) => {
 
   const [userData, setUserData] = useState(null)
   const dispatch = useDispatch()
@@ -29,7 +29,7 @@ const Conversations = ({ data, currentUser }) => {
   return (
     <> 
         <div className="users" style={{display:"flex" , gap:5 ,marginLeft:20}}>
-           <div className="online-dot"></div>
+        {online && <div className="online-dot"></div>}
           <img
             src={userData?.profilePicture? process.env.REACT_APP_PUBLIC_FOLDER + userData.profilePicture : process.env.REACT_APP_PUBLIC_FOLDER + "defaultProfile.png"}
             alt="Profile"
