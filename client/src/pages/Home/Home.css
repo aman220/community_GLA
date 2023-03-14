@@ -18,4 +18,10 @@ body{
         overflow: auto;
         width: 100%;
     }
+    .Home .ProfileSide{
+        display: none;
+    }
+    .Home .PostSide{
+        margin-top: -20px;
+    }
 }
