@@ -1,29 +1,16 @@
 import React from 'react'
 import './TrendCard.css'
 import { TrendData } from './TrendData'
-import { TrendTopic } from './TrendTopic'
 
 const TrendCard = () => {
     return (
         <div className="TrendCard">
-            <h3>Top GLAdiators</h3>
+            <h3>Announcements</h3>
             {TrendData.map((trend, glads) => {
                 return (
                     <div className="trend" key={glads}>
-                        <span><a href="javascript:;">@{trend.name}</a></span>
-                        <span><a href="javascript:;">{trend.glads} </a>GLAds</span>
-                    </div>
-                )
-            })}
-
-            <div className="partition-line"></div>
-
-            <h3>Top Projects</h3>
-            {TrendTopic.map((topic) => {
-                return (
-                    <div className="trend">
-                        <span><a href="javascript:;">{topic.topic} </a></span>
-                        <span>by <a href="javascript:;">{topic.discription}</a></span>
+                        <span><a href="javascript:;">{trend.announcement}</a></span>
+                        <span><a href="javascript:;">- {trend._by}</a></span>
                     </div>
                 )
             })}

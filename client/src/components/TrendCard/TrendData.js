@@ -1,18 +1,19 @@
 export const TrendData = [
     {
-        name: "Gaurav Singh",
-        glads: "1.2k"
+        announcement: "I am looking for AI developers.",
+        _by: "Gaurav Singh"
     },
     {
-        name: "Aman Singh",
-        glads: "1.1k"
+        announcement: "I am hiring for Varta Project",
+        _by: "Aman Singh"
     },
     {
-        name: "Garvit",
-        glads: "1.0k"
+        announcement: "I am providing paid internship",
+        _by: "Garvit"
     },
     {
-        name: "Shivansh Srivastav",
-        glads: "0.8k"
+        announcement: "Full stack developer contact me",
+        _by: "Varsha"
     }
+    
 ]
