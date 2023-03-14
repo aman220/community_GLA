@@ -12,9 +12,20 @@ import Logout from '../../img/log-out.png'
 import Question from '../../img/question.png'
 import Setting from '../../img/settings.png'
 import User from '../../img/user.png'
+import { UilTimes } from '@iconscout/react-unicons'
+import TrendingToggle from '../../img/trending.png'
+import TrendCard from '../TrendCard/TrendCard'
 import { Link } from 'react-router-dom'
+import { useSelector } from "react-redux";
+
 
 function NavBar() {
+
+  const [show, setShow] = useState(false);
+
+  const [showNavBar, setShowNavBar] = useState(false);
+
+  const { user } = useSelector((state) => state.authReducer.authData);
 
   const [open, setOpen] = useState(false);
 
@@ -54,17 +65,32 @@ function NavBar() {
                 </Link>
               </div>
               <div className='s-nav-icon'>
-                <UilSetting className="navbar-icons"/>
+                <Link to={`/profile/${user._id}`}>
+                  <UilSetting className="navbar-icons" />
+                </Link>
               </div>
               <div className="s-nav-icon">
-                <img src={Noti} alt=""/>
+                <img src={Noti} alt="" onClick={() => setShowNavBar(!showNavBar)} />
               </div>
               <div className="s-nav-icon">
                 <Link to='/chat' className='navbar-icons'>
-                  <img src={Comment} alt=""/>
+                  <img src={Comment} alt="" />
                 </Link>
               </div>
             </div>
+            {/* notification division */}
+            {
+              showNavBar && <div className="notification-view">
+                <div className='close-btn'>
+                  <a href="javascript:;" onClick={() => setShowNavBar(!showNavBar)}><UilTimes /></a>
+                  <button href="javascript:;" className='button'>View All</button>
+                </div>
+                <div className="NotificationDiv">
+                  <h6>You have some notification from Gaurav</h6>
+                  <h6>hi</h6>
+                </div>
+              </div>
+            }
           </div>
         </div>
       </div>
@@ -78,6 +104,11 @@ function NavBar() {
         </div>
         <div className='Sitename-mobile'> Accha Sa Name</div>
         <div className="mobile-nav-icons">
+          <div className='s-nav-icon'>
+            <Link to='/home' className='navbar-icons'>
+              <img src={Home} alt="" />
+            </Link>
+          </div>
           <div className="s-nav-icon">
             <Link to='/chat' className='navbar-icons'>
               <img src={Comment} alt="" />
@@ -85,13 +116,15 @@ function NavBar() {
           </div>
           <div className="s-nav-icon">
             <Link to='/home' className='navbar-icons'>
-              <img src={Noti} alt="" />
+              <img src={Noti} alt="" onClick={() => setShowNavBar(!showNavBar)} />
             </Link>
           </div>
           <div className="s-nav-icon" onClick={() => { setOpen(!open) }}>
-            <img src={Profile} alt="" className='profile-icon' />
+            <Link to={`/profile/${user._id}`} className="s-nav-icon">
+              <img src={Profile} alt="" className='profile-icon' />
+            </Link>
           </div>
-          <div className={`dropdown-menu ${open ? 'active' : 'inactive'}`}>
+          {/* <div className={`dropdown-menu ${open ? 'active' : 'inactive'}`}>
             <div className="dropdown-content">
               <h3>The Garvit<br /><span>Software Developer</span></h3>
               <ul>
@@ -102,8 +135,39 @@ function NavBar() {
                 <DropdownItem img={Logout} text={"Logout"} />
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
+        {/* trending toggle only for mobile view */}
+
+        <div className="trending-toggle">
+          <img src={TrendingToggle} alt="" onClick={() => setShow(!show)} />
+        </div>
+
+        {
+          show && <div className="trending-mobile-view">
+            <div className='close-btn'>
+              <a href="javascript:;" onClick={() => setShow(!show)}><UilTimes /></a>
+            </div>
+            <div className="TrendCardDiv">
+              <TrendCard />
+            </div>
+          </div>
+        }
+
+        {/* notification division */}
+
+        {
+          showNavBar && <div className="notification-view">
+            <div className='close-btn'>
+              <a href="javascript:;" onClick={() => setShowNavBar(!showNavBar)}><UilTimes /></a>
+              <button href="javascript:;" className='button'>View All</button>
+            </div>
+            <div className="NotificationDiv">
+              <h6>You have some notification from Gaurav</h6>
+              <h6>hi</h6>
+            </div>
+          </div>
+        }
       </div>
     </nav>
   );

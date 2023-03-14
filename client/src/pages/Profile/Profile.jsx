@@ -4,6 +4,7 @@ import ProfileCard from '../../components/ProfileCard/ProfileCard'
 import PostSide from '../../components/PostSide/PostSide'
 import './Profile.css'
 import RightSide from '../../components/RightSide/RightSide'
+
 const Profile = () => {
   return (
     <div className="Profile">
