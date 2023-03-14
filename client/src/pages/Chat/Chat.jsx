@@ -5,10 +5,14 @@ import ChatBox from "../../components/ChatBox/ChatBox";
 import "./Chat.css";
 import { userChats } from "../../api/ChatRequests";
 import Conversations from "../../components/Conversation/Conversations";
+import { io } from "socket.io-client";
 const Chat = () => {
-  
+  const socket = useRef();
   const [chats, setChats] = useState([]);
+  const [onlineUsers, setOnlineUsers] = useState([]);
   const [currentChat, setCurrentChat] = useState(null);
+  const [sendMessage, setSendMessage] = useState(null);
+  const [receivedMessage, setReceivedMessage] = useState(null);
   const { user } = useSelector((state) => state.authReducer.authData);
   console.log(user);
 
@@ -25,41 +29,78 @@ const Chat = () => {
     };
     getChats();
   }, [user]);
+
+  // Connect to Socket.io
+  useEffect(() => {
+    socket.current = io("ws://localhost:8800");
+    socket.current.emit("new-user-add", user._id);
+    socket.current.on("get-users", (users) => {
+      setOnlineUsers(users);
+      console.log(onlineUsers)
+    });
+  }, [user]);
+
+
+  // Send Message to socket server
+  useEffect(() => {
+    if (sendMessage!==null) {
+      socket.current.emit("send-message", sendMessage);}
+  }, [sendMessage]);
+
+  // Get the message from socket server
+  useEffect(() => {
+    socket.current.on("recieve-message", (data) => {
+      console.log(data)
+      setReceivedMessage(data);
+    }
+
+    );
+  }, []);
+
+
   
 
   return (
+    
     <div className="Chat">
-      <div className="Left-side-chat">
-        <div className="Chat-container">
-          <h2>Chats</h2>
+    {/* Left Side */}
+    <div className="Left-side-chat">
+      {/* <LogoSearch /> */}
+      <div className="Chat-container">
+        <h2>Chats</h2>
+        <div className="Chat-list">
           {chats.map((chat) => (
-              <div
-                onClick={() => {
-                  setCurrentChat(chat);
-                }}
-              >
-                <Conversations
-                  data={chat}
-                  currentUser={user._id}
-                 
-                />
-              </div>
-            ))}
+            <div
+              onClick={() => {
+                setCurrentChat(chat);
+              }}
+            >
+              <Conversations
+                data={chat}
+                currentUser={user._id}
+                // online={checkOnlineStatus(chat)}
+              />
+            </div>
+          ))}
         </div>
-      </div>
-
-      <div className="Right-side-chat">
-        <div style={{ width: "20rem", alignSelf: "flex-end" }}>
-        </div>
-        <ChatBox
-          chat={currentChat}
-          currentUser={user._id}
-          // setSendMessage={setSendMessage}
-          // receivedMessage={receivedMessage}
-        />
       </div>
     </div>
-  );
+
+    {/* Right Side */}
+
+    <div className="Right-side-chat">
+      <div style={{ width: "20rem", alignSelf: "flex-end" }}>
+        {/* <NavIcons /> */}
+      </div>
+      <ChatBox
+        chat={currentChat}
+        currentUser={user._id}
+        setSendMessage={setSendMessage}
+        receivedMessage={receivedMessage}
+      />
+    </div>
+  </div>
+);
 };
 
 export default Chat;

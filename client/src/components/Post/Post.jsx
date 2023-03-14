@@ -13,6 +13,7 @@ const Post = ({ data }) => {
   const { user } = useSelector((state) => state.authReducer.authData);
   const [liked, setLiked] = useState(data.likes.includes(user._id));
   const [likes, setLikes] = useState(data.likes.length);
+  const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
 
   useEffect(() => {
     const fetchUserProfile = async () => {
@@ -37,7 +38,7 @@ const Post = ({ data }) => {
       <div class="usersprofile">
         {userProfile && (
           <>
-            <img src={userProfile.profilePicture} alt="" class="followerImg" />
+            <img src={userProfile.profilePicture? serverPublic + user.profilePicture : serverPublic + "defaultProfile.png"} alt="" class="followerImg" />
             <div class="usersname">
               <span>
                 <b>{userProfile.firstname} {userProfile.lastname}</b>

@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getUser } from "../../api/UserRequests";
-const Conversations = ({ data, currentUserId }) => {
+const Conversations = ({ data, currentUser }) => {
 
   const [userData, setUserData] = useState(null)
   const dispatch = useDispatch()
 
   useEffect(()=> {
 
-    const userId = data.members.find((id)=>id!==currentUserId)
+    const userId = data.members.find((id)=>id!==currentUser)
     const getUserData = async ()=> {
       try
       {
