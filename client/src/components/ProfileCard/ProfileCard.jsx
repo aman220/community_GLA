@@ -22,7 +22,7 @@ const ProfileCard = ({location}) => {
         <span>{user.workAt? user.worksAt: "Write about yourself"}</span>
         <span style={{ fontWeight: "bold", fontSize: "15px" }}>{user.userType}</span>
       </div>
-
+      
       <div className="followStatus">
         <hr />
         <div>
