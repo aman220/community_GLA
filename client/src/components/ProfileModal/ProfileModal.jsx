@@ -77,7 +77,6 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
     >
       <form className="infoForm" onSubmit={handleSubmit}>
         <h3>Your info</h3>
-
         <input
           type="text"
           className="infoInput"
