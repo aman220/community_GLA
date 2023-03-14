@@ -22,8 +22,7 @@
 }
 
 .close-btn {
-    margin-left: 5px;
-    margin-top: 5px;
+    display: none;
 }
 
 .TrendCardDiv {
@@ -56,5 +55,16 @@
         background: linear-gradient(45deg, #a8ff78, #78ffd6);
         border-radius: 25%;
         padding: 4px;
+    }
+    .trending-mobile-view{
+        position: absolute;
+        z-index: 9999;
+        margin-top: 25px;
+    }
+    .close-btn {
+        display: block;
+        position: absolute;
+        height: 20px;
+        margin: 5px;
     }
 }
