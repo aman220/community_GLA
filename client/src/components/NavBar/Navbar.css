@@ -86,13 +86,21 @@
   justify-content: center;
   border-radius: 5px;
   padding: 4px;
+  width: 2rem;
+  height: 2rem;
 }
-
+.s-nav-icon:hover{
+  background: linear-gradient(106.23deg, #10970c, #a4f935 100%);
+}
 .s-nav-icon.active {
   background: linear-gradient(106.23deg, #10970c, #a4f935 100%);
 }
 
 .s-nav-icon>img {
+  height: 1.8rem;
+  width: 1.8rem;
+}
+.navbar-icons>img{
   height: 1.8rem;
   width: 1.8rem;
 }
@@ -130,20 +138,6 @@
   outline: none;
   width: 100%;
   font-size: 1.1rem;
-}
-
-.s-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(106.23deg, #10970c, #a4f935 100%);
-  border-radius: 5px;
-  padding: 4px;
-  color: white;
-}
-
-.s-icon:hover {
-  cursor: pointer;
 }
 
 .mobile-view {

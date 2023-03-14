@@ -4,15 +4,15 @@ import { Provider } from "react-redux";
 import App from "./App";
 import store from "./store/ReduxStore";
 import NavBar from "./components/NavBar/NavBar";
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 ReactDOM.render(
   <Provider store={store}>
-    <NavBar/>
     <BrowserRouter>
-    <Routes>
-      <Route path="*" element={<App/>}/>
-    </Routes>
+      <NavBar />
+      <Routes>
+        <Route path="*" element={<App />} />
+      </Routes>
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")

@@ -12,10 +12,12 @@ import Logout from '../../img/log-out.png'
 import Question from '../../img/question.png'
 import Setting from '../../img/settings.png'
 import User from '../../img/user.png'
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
 
 function NavBar() {
+
   const [open, setOpen] = useState(false);
+
   useEffect(() => {
     let handler = () => {
       setOpen(false);
@@ -46,21 +48,21 @@ function NavBar() {
           <div className='Sitename'> Accha Sa Name</div>
           <div className="RightSide">
             <div className="navIcons">
-              <div className="s-nav-icon active">
-                {/* <Link to='/home'> */} 
+              <div className='s-nav-icon active'>
+                <Link to='/home' className='navbar-icons'>
                   <img src={Home} alt="" />
-                {/* </Link> */}
+                </Link>
+              </div>
+              <div className='s-nav-icon'>
+                <UilSetting className="navbar-icons"/>
               </div>
               <div className="s-nav-icon">
-                <UilSetting />
+                <img src={Noti} alt=""/>
               </div>
               <div className="s-nav-icon">
-                <img src={Noti} alt="" />
-              </div>
-              <div className="s-nav-icon">
-                {/* <Link to='/chat'> */}
-                  <img src={Comment} alt="" />
-                {/* </Link> */}
+                <Link to='/chat' className='navbar-icons'>
+                  <img src={Comment} alt=""/>
+                </Link>
               </div>
             </div>
           </div>
@@ -77,10 +79,14 @@ function NavBar() {
         <div className='Sitename-mobile'> Accha Sa Name</div>
         <div className="mobile-nav-icons">
           <div className="s-nav-icon">
-            <img src={Comment} alt="" />
+            <Link to='/chat' className='navbar-icons'>
+              <img src={Comment} alt="" />
+            </Link>
           </div>
           <div className="s-nav-icon">
-            <img src={Noti} alt="" />
+            <Link to='/home' className='navbar-icons'>
+              <img src={Noti} alt="" />
+            </Link>
           </div>
           <div className="s-nav-icon" onClick={() => { setOpen(!open) }}>
             <img src={Profile} alt="" className='profile-icon' />
