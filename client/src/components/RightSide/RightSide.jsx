@@ -1,6 +1,6 @@
-import React from 'react'
 import './RightSide.css'
 import TrendCard from '../TrendCard/TrendCard'
+import React from "react";
 
 const RightSide = () => {
   return (
