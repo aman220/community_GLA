@@ -29,26 +29,6 @@ const PostShare = () => {
 
   const [modalOpened , setModalOpened] = useState(false);
 
-  // const handleAnnounceClick = () => {
-  //   setShowAnnounceModal(true);
-  // };
-
-  // const handleCloseAnnounceModal = () => {
-  //   setShowAnnounceModal(false);
-  // };
-
-  // const handleAnnounceSubmit = (e) => {
-  //   e.preventDefault();
-  //   const title = e.target.elements['announcement-title'].value;
-  //   const message = e.target.elements['announcement-message'].value;
-  //   // Do something with the form data, such as submit it to a server
-  //   console.log(`Title: ${title}\nMessage: ${message}`);
-  //   // Clear the form fields
-  //   e.target.reset();
-  //   // Hide the modal
-  //   setShowAnnounceModal(false);
-  // };
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
