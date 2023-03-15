@@ -11,7 +11,7 @@ const TrendCard = () => {
                     <div className="trend" key={glads}>
                         <span><a href="javascript:;">{trend.announcement}</a></span>
                         <span><a href="javascript:;">- {trend._by}</a></span>
-                    </div>
+                    </div> 
                 )
             })}
         </div>
