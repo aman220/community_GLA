@@ -3,7 +3,9 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Auth from "./pages/Auth/Auth";
 import Profile from "./pages/Profile/Profile";
+import UserProfile from "./pages/UserProfile/UserProfile"
 import { useSelector } from "react-redux";
+import Projects from "./pages/Projects/Projects"
 import Chat from "./pages/Chat/Chat";
 
 function App() {
@@ -37,6 +39,17 @@ function App() {
           path="/profile/:id"
           element={user ? <Profile /> : <Navigate to="../auth" />}
         />
+        <Route
+          path="/projects"
+          element={user ?  <Projects/> : <Navigate to="../projects" /> }
+        />
+
+        <Route
+        path="/userprofile/:id" 
+        element={user ? <UserProfile/> : <Navigate to ="../home"/>}
+        >
+          
+        </Route>
         <Route
           path="*"
           element={

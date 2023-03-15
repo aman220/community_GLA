@@ -35,11 +35,11 @@ const Post = ({ data }) => {
 
   return (
     <div className="Post">
-      <div class="usersprofile">
+      <div className="usersprofile">
         {userProfile && (
           <>
-            <img src={userProfile.profilePicture? serverPublic + user.profilePicture : serverPublic + "defaultProfile.png"} alt="" class="followerImg" />
-            <div class="usersname">
+            <img src={userProfile.profilePicture? serverPublic + user.profilePicture : serverPublic + "defaultProfile.png"} alt="" className="followerImg" />
+            <div className="usersname">
               <span>
                 <b>{userProfile.firstname} {userProfile.lastname}</b>
               </span>

@@ -4,6 +4,7 @@ import FollowersModal from "../FollowersModal/FollowersModal";
 import { getAllUser } from "../../api/UserRequests";
 import User from "../Users/User";
 import { useSelector } from "react-redux";
+import {Link} from 'react-router-dom'
 const FollowersCard = ({ location }) => {
   const [modalOpened, setModalOpened] = useState(false);
   const [persons, setPersons] = useState([]);
@@ -22,7 +23,7 @@ const FollowersCard = ({ location }) => {
     <h3>People you may know</h3>
 
     {persons.slice(0, 5).map((person, id) => {
-      if (person._id !== user._id) return <User person={person} key={id} />;
+      if (person._id !== user._id) return <User person={person} key={id}  /> ;
     })}
     {!location ? (
       <span onClick={() => setModalOpened(true)}>Show more</span>

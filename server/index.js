@@ -9,6 +9,7 @@ import PostRoute from './Routes/PostRoute.js'
 import MessageRoute from './Routes/MessageRoute.js'
 import UploadRoute from './Routes/UploadRouter.js'
 import ChatRoute from './Routes/ChatRoute.js'
+import ProjectsRoute from './Routes/ProjectsRoute.js'
 
 // Routes
 
@@ -47,3 +48,4 @@ mongoose
   app.use('/chat', ChatRoute)
   app.use('/message', MessageRoute)
   app.use('/upload',UploadRoute)
+  app.use('/projects', ProjectsRoute);

@@ -4,12 +4,18 @@ import Cover from "../../img/cover.jpg";
 import Profile from "../../img/profileImg.jpg";
 import FollowersCard from "../FollowersCard/FollowersCard"
 import {Link} from 'react-router-dom'
-import "./ProfileCard.css";
+import { useParams } from "react-router-dom";
+import "./UserProfileCard.css";
 
-const ProfileCard = ({location}) => {
-  const {user} = useSelector((state)=>state.authReducer.authData);
-  const posts = useSelector((state)=>state.postReducer.posts)
-  const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
+const ProfileCard = ({location , person }) => {
+    const { user } = useSelector((state) => state.authReducer.authData);
+    // const { person } = useParams();
+    const posts = useSelector((state) => state.postReducer.posts);
+    const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
+  
+    // Get the user object based on the user ID in the URL
+    const selectedUser = location.state?.person || user;
+    
   return (
     <div className="ProfileCard">
       <div className="ProfileImages">
@@ -18,9 +24,9 @@ const ProfileCard = ({location}) => {
       </div>
 
       <div className="ProfileName">
-        <span>{user.firstname} {user.lastname}</span>
+        <span>{selectedUser.firstname} </span>
         <span>{user.workAt? user.worksAt: "Write about yourself"}</span>
-        <span style={{ fontWeight: "bold", fontSize: "15px" }}>{user.userType}</span>
+        <span style={{ fontWeight: "bold", fontSize: "15px" }}>{selectedUser.userType}</span>
       </div>
       
       <div className="followStatus">

@@ -2,6 +2,7 @@ import React from 'react'
 import ProfileLeft from '../../components/ProfileLeft/ProfileLeft'
 import ProjectShare from '../../components/ProjectShare/ProjectShare'
 import RightSide from '../../components/RightSide/RightSide'
+import Project from '../../components/Project/Project'
 
 import "./Projects.css"
 const Projects = () => {
@@ -10,8 +11,10 @@ const Projects = () => {
         <ProfileLeft/>
         <div className='projectscenter'>
             <ProjectShare/>
+            <Project/>
         </div>
         <RightSide></RightSide>
+        this is project 
      
     </div>
   )

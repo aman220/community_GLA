@@ -1,0 +1,24 @@
+.Profile {
+    position: relative;
+    display: grid;
+    grid-template-areas: none;
+    grid-template-columns: 23% 50% 25%;
+    gap: 1rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .Profile {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    .FollowersCard{
+        display: none;
+    }
+    .ProfileCard{
+        align-items: center;
+    }
+    .PostSide{
+        margin-top: 5px;
+    }
+  }

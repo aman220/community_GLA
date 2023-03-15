@@ -4,30 +4,36 @@ import ProfileImage from "../../img/profileImg.jpg";
 import { UilScenery } from "@iconscout/react-unicons";
 import { UilClipboard } from "@iconscout/react-unicons";
 import { UilPlayCircle } from "@iconscout/react-unicons";
+import { useSelector, useDispatch } from "react-redux";
 import { UilTimes } from "@iconscout/react-unicons";
 import { UilSchedule } from "@iconscout/react-unicons";
+import { uploadProjects } from "../../api/UploadRequest";
 
 const ProjectShare = () => {
-  const [image, setImage] = useState(null);
-  const imageRef = useRef();
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [technology, setTechnology] = useState("");
-  const [request , setRequest] = useState("");
+ 
+  
+  const loading = useSelector((state) => state.postReducer.uploading);
+  const { user } = useSelector((state) => state.authReducer.authData);
+  const dispatch = useDispatch()
+  const desc = useRef();
+  const title = useRef();
+  const tech = useRef();
+  const req = useRef();
 
-  const onImageChange = (event) => {
-    if (event.target.files && event.target.files[0]) {
-      let img = event.target.files[0];
-      setImage({
-        image: URL.createObjectURL(img),
-      });
-    }
-  };
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Project submitted:", { title, description, technology });
-  };
+    //post data
+    const newPost = {
+      userId: user._id,
+      desc: desc.current.value,
+      title : title.current.value,
+      tech  : tech.current.value,
+      req : req.current.value
+    };
+    dispatch(uploadProjects(newPost))
+  }
 
   return (
     <div onSubmit={handleSubmit} className="PostShare">
@@ -35,19 +41,20 @@ const ProjectShare = () => {
       <div>
         <span>Project Title</span>
         <input
+        ref={title}
+        required
           type="text"
           placeholder="What's in your mind ?"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          required
+         
+          
         />
 
         <span>Project Description</span>
         <textarea
+        ref={desc}
           type="text"
           placeholder="Project description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
+          
           required
         />
         <div>
@@ -57,8 +64,8 @@ const ProjectShare = () => {
               <select
                 className="infoInput"
                 name="userType"
-                value={technology}
-                onChange={(e) => setTechnology(e.target.value)}
+                ref={tech}
+               
                 required
               >
                 <option value="">Select technology</option>
@@ -69,16 +76,15 @@ const ProjectShare = () => {
             </div>
           </div>
         </div>
-        <form onSubmit={handleSubmit}></form>
         <span>Request</span>
         <input
+        ref={req}
           type="text"
           placeholder="What you want ?"
-          value={request}
-          onChange={(e) => setRequest(e.target.value)}
+         
           required
         />
-        <button className='button ps-button' type="submit">Share</button>
+        <button className='button ps-button' type="submit" onClick={handleSubmit} disabled={loading} >  {loading ? "uploading" : "Share"}Share</button>
       </div>
     </div>
   );
