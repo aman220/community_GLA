@@ -5,13 +5,14 @@ import RightSide from '../../components/RightSide/RightSide'
 import Project from '../../components/Project/Project'
 
 import "./Projects.css"
+import ProjectsList from '../../components/Projects/ProjectsList'
 const Projects = () => {
   return (
     <div className='Profile'>
         <ProfileLeft/>
         <div className='projectscenter'>
             <ProjectShare/>
-            <Project/>
+            <ProjectsList/>
         </div>
         <RightSide></RightSide>
         this is project 
