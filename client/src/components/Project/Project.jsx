@@ -6,7 +6,6 @@ const Project = ({data}) => {
   return (
     
     <div className="projects-container">
-      <h2>Projects</h2>
       <div className="project-card">
       <div className="project">
         <div className="project-image">

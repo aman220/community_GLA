@@ -1,27 +1,32 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import './ProjectsList.css'
-import { getTimelineProjects } from "../../actions/ProjectsAction";
-import { useSelector, useDispatch } from "react-redux";
+import axios from 'axios';
 import Project from '../Project/Project'
+import { useSelector, useDispatch } from "react-redux";
 
 const ProjectsList = () => {
   const { user } = useSelector((state) => state.authReducer.authData);
-  const dispatch = useDispatch();
-  const {projects} = useSelector((state) => state.projectReducer);
-
+  const [projects, setProjects] = useState([]);
+  
   useEffect(() => {
-    dispatch(getTimelineProjects(user._id));
-  }, []);
-
- 
-
+    const fetchProjects = async () => {
+      try {
+        const response = await axios.get(`http://localhost:5000/projects/${user._id}/timeline`);
+        setProjects(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchProjects();
+  }, [user._id]);
+  
   return (
     <div className="Posts">
-        {projects.map((project, id) => (
-            <Project  data={project} key={id} />
-        ))}
+      {projects.map((project, id)=>{
+        return <Project data={project} key={id}/>
+      })}
     </div>
   );
-}
+};
 
 export default ProjectsList;

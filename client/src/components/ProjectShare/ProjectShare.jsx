@@ -25,15 +25,15 @@ const ProjectShare = () => {
     e.preventDefault();
 
     //post data
-    const newPost = {
+    const newProject = {
       userId: user._id,
       desc: desc.current.value,
       title : title.current.value,
       tech  : tech.current.value,
       req : req.current.value,
     };
-    dispatch(uploadProjects(newPost))
-    console.log(newPost)
+    dispatch(uploadProjects(newProject))
+    console.log(newProject)
   }
 
   return (
