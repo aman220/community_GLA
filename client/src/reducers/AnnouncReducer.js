@@ -3,7 +3,7 @@ const announcReducer = (
     action
   ) => {
     switch (action.type) {
-      // belongs to PostShare.jsx
+      
       case "UPLOAD_START":
         return { ...state, error: false, uploading: true };
       case "UPLOAD_SUCCESS":
