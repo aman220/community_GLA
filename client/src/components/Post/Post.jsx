@@ -11,8 +11,10 @@ import { getUser } from "../../api/UserRequests";
 const Post = ({ data }) => {
   const [userProfile, setUserProfile] = useState(null);
   const { user } = useSelector((state) => state.authReducer.authData);
-  const [liked, setLiked] = useState(data.likes.includes(user._id));
-  const [likes, setLikes] = useState(data.likes.length);
+  // const [liked, setLiked] = useState(data.likes.includes(user._id));
+  const liked = true;
+  const setLiked = true;
+  const [likes, setLikes] = [1, 2];
   const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
 
   useEffect(() => {

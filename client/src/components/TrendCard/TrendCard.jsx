@@ -1,6 +1,7 @@
 import React from 'react'
 import './TrendCard.css'
 import { TrendData } from './TrendData'
+import {useDispatch, useSelector} from 'react-redux'
 
 const TrendCard = () => {
     return (
