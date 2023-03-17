@@ -30,3 +30,14 @@ export const uploadPost = (data) => async (dispatch) => {
       dispatch({ type: "UPLOAD_FAIL" });
     }
   };
+
+  export const uploadAnnouncement = (data) => async (dispatch) => {
+    dispatch({ type: "UPLOAD_START" });
+    try {
+      const newAnnounc = await UploadApi.uploadAnnouncement(data);
+      dispatch({ type: "UPLOAD_SUCCESS", data: newAnnounc.data });
+    } catch (error) {
+      console.log(error);
+      dispatch({ type: "UPLOAD_FAIL" });
+    }
+  }

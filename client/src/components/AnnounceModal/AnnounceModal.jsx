@@ -1,7 +1,8 @@
 import { Modal, useMantineTheme } from "@mantine/core";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { uploadAnnouncement } from "../../actions/uploadAction";
 import NavBar from "../NavBar/NavBar";
 import "./AnnounceModal.css"
 
@@ -11,27 +12,24 @@ const AnnounceModal = ({ modalOpened, setModalOpened, data }) => {
     const {password, ...other} = data;
     const [formData, setFormData] = useState(other);
     
+    const announeName = useRef();
+    const announeDesc = useRef();
+
     const dispatch = useDispatch();
     const param = useParams();
-    const {user} = useSelector((state)=>state.authReducer.authData);
-  
-    const handleChange = (e)=> {
-      setFormData({...formData, [e.target.name]: e.target.value});
-    };
-  
-   
+    const {user} = useSelector((state)=>state.authReducer.authData);   
   
     const handleSubmit = (e)=> {
       e.preventDefault();
-      let UserData = formData;
-        const data = new FormData();
-        const fileName = Date.now() 
-        data.append("name", fileName);
-        try {
-          
-        } catch (err) {
-          console.log(err);
-        }
+      
+      const newAnnouncement = {
+        userId : user._id,
+        AnnouneName : announeName.current.value,
+        AnnounceDesc : announeDesc.current.value,
+        firstname : user.firstname,
+        lastname: user.lastname
+      }
+      dispatch(uploadAnnouncement(newAnnouncement))
       }
       
     return (
@@ -55,8 +53,8 @@ const AnnounceModal = ({ modalOpened, setModalOpened, data }) => {
             className="infoInput"
             name="firstname"
             placeholder="Write Announcement"
-            onChange={handleChange}
-            value = {formData.AnnouneName}
+            ref={announeName}
+            required
           />
           
   
@@ -66,8 +64,8 @@ const AnnounceModal = ({ modalOpened, setModalOpened, data }) => {
             className="infoInput"
             name="description"
             placeholder="Announement Description"
-            onChange={handleChange}
-            value = {formData.AnnounceDesc}
+            ref={announeDesc}
+            required
           />
   
   
