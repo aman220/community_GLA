@@ -57,9 +57,10 @@
         padding: 4px;
     }
     .trending-mobile-view{
-        position: absolute;
+        position: fixed;
         z-index: 9999;
-        margin-top: 25px;
+        margin-top: 1000px;
+        overflow-y: scroll;
     }
     .close-btn {
         display: block;
