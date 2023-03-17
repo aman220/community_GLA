@@ -20,7 +20,7 @@ export const uploadPost = (data) => async (dispatch) => {
     }
   };
 
-  export const uploadProject = (data) => async (dispatch) => {
+  export const uploadProjects = (data) => async (dispatch) => {
     dispatch({ type: "UPLOAD_START" });
     try {
       const newProject = await UploadApi.uploadPost(data);

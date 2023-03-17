@@ -30,9 +30,10 @@ const ProjectShare = () => {
       desc: desc.current.value,
       title : title.current.value,
       tech  : tech.current.value,
-      req : req.current.value
+      req : req.current.value,
     };
     dispatch(uploadProjects(newPost))
+    console.log(newPost)
   }
 
   return (
@@ -84,7 +85,7 @@ const ProjectShare = () => {
          
           required
         />
-        <button className='button ps-button' type="submit" onClick={handleSubmit} disabled={loading} >  {loading ? "uploading" : "Share"}Share</button>
+        <button className='button ps-button' type="submit" onClick={handleSubmit} disabled={loading} >  {loading ? "uploading" : "Share"}</button>
       </div>
     </div>
   );
