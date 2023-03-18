@@ -34,8 +34,9 @@ const UserSchema = mongoose.Schema(
         worksAt: String,
         qualification: String,
         country: String,
+        skills: String,
         description: String,
-        followers: [] ,
+        followers: [],
         following: []
     },
     {timestamps: true}
