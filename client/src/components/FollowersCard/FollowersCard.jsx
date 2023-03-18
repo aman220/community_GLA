@@ -4,7 +4,8 @@ import FollowersModal from "../FollowersModal/FollowersModal";
 import { getAllUser } from "../../api/UserRequests";
 import User from "../Users/User";
 import { useSelector } from "react-redux";
-import {Link} from 'react-router-dom'
+import { UilSearch } from '@iconscout/react-unicons'
+import { Link } from "react-router-dom";
 const FollowersCard = ({ location }) => {
   const [modalOpened, setModalOpened] = useState(false);
   const [persons, setPersons] = useState([]);
@@ -20,24 +21,28 @@ const FollowersCard = ({ location }) => {
 
   return (
     <div className="FollowersCard">
-    <h3>People you may know</h3>
+      <h3>People you may know</h3>
+      <div className="Searchc">
+        <input type="text" placeholder="#Search" />
+        <div className="s-icon">
+          <UilSearch />
+        </div>
+      </div>
 
-    {persons.slice(0, 5).map((person, id) => {
-      if (person._id !== user._id) return <User person={person} key={id}  /> ;
-    })}
-    {!location ? (
-      <span onClick={() => setModalOpened(true)}>Show more</span>
-    ) : (
-      ""
-    )}
+      {persons.slice(0, 5).map((person, id) => {
+        if (person._id !== user._id) return <User person={person} key={id} />;
+      })}
+      {!location ? (
+        <span onClick={() => setModalOpened(true)}>Show more</span>
+      ) : (
+        ""
+      )}
 
-    
-    <FollowersModal
-      modalOpened={modalOpened}
-      setModalOpened={setModalOpened}
-     
-    />
-  </div>
+      <FollowersModal
+        modalOpened={modalOpened}
+        setModalOpened={setModalOpened}
+      />
+    </div>
   );
 };
 
