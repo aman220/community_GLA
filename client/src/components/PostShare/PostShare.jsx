@@ -10,6 +10,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { uploadImage, uploadPost } from '../../actions/uploadAction';
 import ProfileModal from '../ProfileModal/ProfileModal'
 import AnnounceModal from '../AnnounceModal/AnnounceModal';
+import { Link } from 'react-router-dom';
 
 const PostShare = () => {
   const [image, setImage] = useState(null)
@@ -29,6 +30,10 @@ const PostShare = () => {
 
   const [modalOpened , setModalOpened] = useState(false);
 
+
+    const handleMeetingButtonClick = () => {
+      window.location.href = "https://meet.google.com/?authuser=0";
+    };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -89,12 +94,16 @@ const PostShare = () => {
               />
                     </div>
                     </div>
+          <Link to="/projects">
           <div className="option" style={{ color: "var(--location)" }}>
+            
             <UilClipboard />
             Project
+         
           </div>
+          </Link>
           <div className="option" style={{ color: "var(--schedule)" }}>
-            <UilSchedule />
+            <UilSchedule onClick={handleMeetingButtonClick}/>
             Meeting
           </div>
           <button className='button ps-button' onClick={handleSubmit} disabled={loading} >  {loading ? "uploading" : "Share"}</button>
