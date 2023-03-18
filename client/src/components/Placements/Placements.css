@@ -6,7 +6,7 @@
 }
 .PlacementSlider {
     width: 100%;
-    overflow-x: auto;
+    overflow-x: scroll;
   }
   
   .PlacementSliderContainer {
