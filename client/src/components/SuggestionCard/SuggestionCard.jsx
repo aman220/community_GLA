@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 const SuggestionCard = ({ location }) => {
   const [modalOpened, setModalOpened] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const [persons, setPersons] = useState([]);
   const { user } = useSelector((state) => state.authReducer.authData);
 
@@ -28,6 +29,8 @@ useEffect(() => {
     };
     fetchPersons();
   }, []);
+
+  
 
   return (
     <div className="FollowersCard">
