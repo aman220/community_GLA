@@ -66,7 +66,7 @@ const Infocard = () => {
                 <span>
                     <b>Skills: </b>
                 </span>
-                <span>Software Developer</span>
+                <span>{profileUser.skills}</span>
             </div>
             <div className="info">
                 <span>

@@ -114,6 +114,15 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
           value = {formData.qualification}
         />
 
+        <input
+          type="text"
+          className="infoInput"
+          name="skills"
+          placeholder="Skills"
+          onChange={handleChange}
+          value = {formData.skills}
+        />
+
 
 
         <input
