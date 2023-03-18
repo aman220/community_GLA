@@ -55,3 +55,17 @@
     cursor: pointer;
     background: transparent;
 }
+
+.Searchc {
+    display: flex;
+    align-items: center;
+    background-color: var(--inputColor);
+    border-radius: 10px;
+    padding: 5px;
+  }
+  
+  .Searchc>input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
