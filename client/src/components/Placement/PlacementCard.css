@@ -2,8 +2,13 @@
     width: 190px;
     height: 274px;
     background: white;
+    margin :20px;
     padding: .4em;
     border-radius: 6px;
+  }
+
+  .top{
+    font-weight: bold;
   }
   
   .card-image {
@@ -43,11 +48,15 @@
     color: gray;
     font-weight: 400;
     font-size: 11px;
-    padding-top: 20px;
+    /* margin-bottom: 10px; */
+    display: flex;
+    padding-top: 10px;
   }
   
-  .name {
-    font-weight: 600;
+  .namefirst {
+    font-weight: 400;
+    display: flex;
+    margin-bottom: 10px;
   }
   
   .name:hover {

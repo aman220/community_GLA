@@ -91,7 +91,12 @@
 .Sitename {
   font-weight: bold;
   text-align: center;
+  font-size: large;
   margin-right: auto;
+}
+
+.name{
+  
 }
 
 .navIcons {
@@ -177,6 +182,9 @@
 
 .mobile-view .mobile-container .logo-container img {
   height: 2rem;
+}
+.name{
+  display: flex;
 }
 
 .Sitename-mobile {

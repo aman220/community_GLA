@@ -1,0 +1,20 @@
+.Placement{
+    display:flex;
+    flex-direction:row;
+    gap: 1rem;
+}
+.PlacementSlider {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .PlacementSliderContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0 20px;
+  }
+  
+  .PlacementCard {
+    width: 300px; /* or any desired width */
+    margin-right: 20px;
+  }

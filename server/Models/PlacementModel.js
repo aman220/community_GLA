@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const PlacementModel = mongoose.Schema(
+const placementSchema = mongoose.Schema(
   {
     userId: { type: String, required: true },
     desc: String,
@@ -12,5 +12,5 @@ const PlacementModel = mongoose.Schema(
   }
 );
 
-var PlacementModel = mongoose.model("placements", placementSchema);
+var PlacementModel= mongoose.model("placements", placementSchema);
 export default PlacementModel;

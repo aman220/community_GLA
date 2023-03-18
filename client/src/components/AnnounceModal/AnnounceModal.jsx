@@ -30,6 +30,7 @@ const AnnounceModal = ({ modalOpened, setModalOpened, data }) => {
         lastname: user.lastname
       }
       dispatch(uploadAnnouncement(newAnnouncement))
+      setModalOpened(false);
       }
       
     return (
@@ -44,7 +45,7 @@ const AnnounceModal = ({ modalOpened, setModalOpened, data }) => {
         size="50%"
         className="custom-modal"
         opened={modalOpened}
-        onClose={() => setModalOpened(false)}
+      onClose={() => setModalOpened(false)}
       >
         <form className="infoForm" onSubmit={handleSubmit}>
           <h3>Upload Announcements</h3>

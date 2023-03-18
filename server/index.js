@@ -11,6 +11,7 @@ import UploadRoute from './Routes/UploadRouter.js'
 import ChatRoute from './Routes/ChatRoute.js'
 import ProjectsRoute from './Routes/ProjectsRoute.js'
 import AnnounceRoute from './Routes/AnnounceRoute.js'
+import PlacementRoute from './Routes/PlacementRoute.js'
 
 // Routes
 
@@ -51,3 +52,4 @@ mongoose
   app.use('/upload',UploadRoute);
   app.use('/projects', ProjectsRoute);
   app.use('/announce', AnnounceRoute);
+  app.use('/placements', PlacementRoute);
