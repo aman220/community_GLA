@@ -27,6 +27,7 @@ function NavBar() {
 
   const auth = useSelector((state) => state.authReducer.authData);
   const user = auth && auth.user;
+  const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
 
   const [open, setOpen] = useState(false);
 
@@ -57,12 +58,17 @@ function NavBar() {
               </div>
             </div>
           </div>
-          <div className='Sitename'> GLAdiators </div>
+          <div className='Sitename'> Accha Sa Name</div>
           <div className="RightSide">
             <div className="navIcons">
               <div className='s-nav-icon active'>
                 <Link to='/home' className='navbar-icons'>
                   <img src={Home} alt="" />
+                </Link>
+              </div>
+              <div className='s-nav-icon'>
+                <Link to='/company' className='navbar-icons'>
+                  <UilSearch/>
                 </Link>
               </div>
               <div className='s-nav-icon'>
@@ -122,7 +128,9 @@ function NavBar() {
           </div>
           <div className="s-nav-icon" onClick={() => { setOpen(!open) }}>
             <Link to={`/profile/${user?._id}`} className="s-nav-icon">
-              <img src={Profile} alt="" className='profile-icon' />
+              {/* <img src={user.profilePicture? serverPublic + user.profilePicture : serverPublic + "defaultProfile.png"} alt="" className='profile-icon' /> */}
+              <img src={serverPublic + "defaultProfile.png"} alt="" className='profile-icon' />
+
             </Link>
           </div>
           {/* <div className={`dropdown-menu ${open ? 'active' : 'inactive'}`}>
