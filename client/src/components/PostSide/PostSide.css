@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    height: 100vh;
-    overflow: auto;
+    /* height: 100vh; */
+    overflow: scroll;
 }
 .trending-toggle{
     display: none;
