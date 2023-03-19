@@ -12,6 +12,7 @@ const FollowersCard = ({ location }) => {
   const [modalOpened, setModalOpened] = useState(false);
   const [persons, setPersons] = useState([]);
   const { user } = useSelector((state) => state.authReducer.authData);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const fetchPersons = async () => {
@@ -21,15 +22,19 @@ const FollowersCard = ({ location }) => {
     fetchPersons();
   }, []);
 
+
+
   return (
     <div className="FollowersCard">
       <h3>People you may know</h3>
       <div className="Searchc">
-        <input type="text" placeholder="#Search" />
+      <input type="text" placeholder="#Search" onChange={(e) => setSearchQuery(e.target.value)} />
+
         <div className="s-icon">
           <UilSearch />
         </div>
       </div>
+      
 
       {persons.slice(0, 5).map((person, id) => {
         if (person._id !== user._id) return <User person={person} key={id} />;
