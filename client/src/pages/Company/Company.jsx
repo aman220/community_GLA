@@ -19,11 +19,11 @@ const Company = () => {
     return (
         <div className='company'>
             <div className="Search">
-                <input type="text" id="message" name="message" onChange={handleChange} value={message} className="" placeholder='Search about company here'/>
+                <input type="text" id="message" name="message" onChange={handleChange} value={message} className="" placeholder='Enter CIN or Company Name'/>
                 <button onClick={handleClick} className="button s-icon">Search</button>
             </div>
             {/* <div className="result"> */}
-                {shown ? <iframe src={`https://www.bing.com/search?q=${updated}+company`} className="iframe" allowTransparency="true"></iframe> : null}
+                {shown ? <iframe src={`https://www.tofler.in/search?cin=&q=${updated}`} className="iframe"></iframe> : null}
             {/* </div> */}
         </div>
     );
