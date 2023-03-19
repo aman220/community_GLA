@@ -6,6 +6,8 @@ import User from "../Users/User";
 import { useSelector } from "react-redux";
 import { UilSearch } from '@iconscout/react-unicons'
 import { Link } from "react-router-dom";
+
+
 const FollowersCard = ({ location }) => {
   const [modalOpened, setModalOpened] = useState(false);
   const [persons, setPersons] = useState([]);

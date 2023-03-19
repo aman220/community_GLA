@@ -47,7 +47,7 @@ const Post = ({ data }) => {
               </span>
               <span>{userProfile.username}</span>
             </div>
-            <button className="button fc-button">Follow</button>
+            {/* <button className="button fc-button">Follow</button> */}
           </>
         )}
       </div>
