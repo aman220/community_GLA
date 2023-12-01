@@ -58,7 +58,7 @@ function NavBar() {
               </div>
             </div>
           </div>
-          <div className='Sitename'> Accha Sa Name</div>
+          <div className='Sitename'>GLAdiators</div>
           <div className="RightSide">
             <div className="navIcons">
               <div className='s-nav-icon active'>
@@ -109,7 +109,7 @@ function NavBar() {
             <img className="logo" src={Logo} alt="" />
           </div>
         </div>
-        <div className='Sitename-mobile'> Accha Sa Name</div>
+        <div className='Sitename-mobile'>GLAdiators</div>
         <div className="mobile-nav-icons">
           <div className='s-nav-icon'>
             <Link to='/home' className='navbar-icons'>
